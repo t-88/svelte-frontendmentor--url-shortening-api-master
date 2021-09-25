@@ -1,0 +1,13 @@
+@import "./includeMedia";
+
+$pc: 1823;
+$tablet: 700;
+$phone: 320;
+$min-width: 320;
+$breakpoints: ("pc":$pc * 1px,"min-width":$min-width * 1px,"phone": $phone * 1px,"tablet": $tablet * 1px);
+
+
+@function applyMath($max_val,$min_val,$max_width,$min_width,$unit: 1px){
+    @return calc( #{$min_val} * #{$unit} + #{$max_val - $min_val} * ((100vw - #{$min_width}px)) / #{$max_width - $min_width});
+}
+
